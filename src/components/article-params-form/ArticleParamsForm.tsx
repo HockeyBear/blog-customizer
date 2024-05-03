@@ -40,7 +40,7 @@ export const ArticleParamsForm = ({ param, articleStateChange }: ArticlePropsPar
 		setStateParams(defaultStateParams);
 	}
 
-	const ChangedParamrters = (selected: OptionType) => {
+	const сhangedParamrters = (selected: OptionType) => {
 		if(fontFamilyOptions.includes(selected)) {
 			setStateParams({...stateParams, fontFamilyOption: selected})
 		}
@@ -63,55 +63,53 @@ export const ArticleParamsForm = ({ param, articleStateChange }: ArticlePropsPar
 	}
 
 	return (
-		<>
-			<CloseFormOutside isOpen={isOpenClickButton} setIsOpen={setIsOpenClickButton}>
-			<ArrowButton isOpenClickButton={isOpenClickButton} onClick={handleClickArrowButton} />
-			<aside className={clsx(styles.container, {
-				[styles.container_open]: isOpenClickButton,
-			})}>
-				<form className={styles.form} onSubmit={onSubmitParams} onReset={onResetParams} >
-					<Text as='h2' size={31} weight={800} family='open-sans' align='left' >
-						Задайте параметры
-					</Text>
-					<Select 
-						title='шрифт'
-						options={fontFamilyOptions}
-						selected={stateParams.fontFamilyOption} 
-						onChange={ChangedParamrters} 
-					/>
-					<RadioGroup 
-						name='radio'
-						title='размер шрифта'
-						selected={stateParams.fontSizeOption}
-						options={fontSizeOptions}
-						onChange={ChangedParamrters}
-					/>
-					<Select
-						title='цвет шрифта'
-						options={fontColors}
-						selected={stateParams.fontColor}
-						onChange={ChangedParamrters}
-					/>
-					<Separator />
-					<Select 
-						title='цвет фона'
-						options={backgroundColors}
-						selected={stateParams.backgroundColor}
-						onChange={ChangedParamrters}
-					/>
-					<Select 
-						title='ширина контента'
-						options={contentWidthArr}
-						selected={stateParams.contentWidth}
-						onChange={ChangedParamrters}
-					/>
-					<div className={styles.bottomContainer}>
-						<Button title='Сбросить' type='reset' />
-						<Button title='Применить' type='submit' />
-					</div>
-				</form>
-			</aside>
-			</CloseFormOutside>
-		</>
+		<CloseFormOutside isOpen={isOpenClickButton} setIsOpen={setIsOpenClickButton}>
+		<ArrowButton isOpenClickButton={isOpenClickButton} onClick={handleClickArrowButton} />
+		<aside className={clsx(styles.container, {
+			[styles.container_open]: isOpenClickButton,
+		})}>
+			<form className={styles.form} onSubmit={onSubmitParams} onReset={onResetParams} >
+				<Text as='h2' size={31} weight={800} family='open-sans' align='left' >
+					Задайте параметры
+				</Text>
+				<Select 
+					title='шрифт'
+					options={fontFamilyOptions}
+					selected={stateParams.fontFamilyOption} 
+					onChange={сhangedParamrters} 
+				/>
+				<RadioGroup 
+					name='radio'
+					title='размер шрифта'
+					selected={stateParams.fontSizeOption}
+					options={fontSizeOptions}
+					onChange={сhangedParamrters}
+				/>
+				<Select
+					title='цвет шрифта'
+					options={fontColors}
+					selected={stateParams.fontColor}
+					onChange={сhangedParamrters}
+				/>
+				<Separator />
+				<Select 
+					title='цвет фона'
+					options={backgroundColors}
+					selected={stateParams.backgroundColor}
+					onChange={сhangedParamrters}
+				/>
+				<Select 
+					title='ширина контента'
+					options={contentWidthArr}
+					selected={stateParams.contentWidth}
+					onChange={сhangedParamrters}
+				/>
+				<div className={styles.bottomContainer}>
+					<Button title='Сбросить' type='reset' />
+					<Button title='Применить' type='submit' />
+				</div>
+			</form>
+		</aside>
+		</CloseFormOutside>
 	);
 };

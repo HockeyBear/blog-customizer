@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from "react";
 
-export const CloseForm = (
+export const useCloseForm = (
   isOpen: boolean,
   setIsOpen: (isOpen: boolean) => void,
   ref: RefObject<HTMLDivElement>

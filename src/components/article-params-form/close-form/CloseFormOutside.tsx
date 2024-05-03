@@ -1,5 +1,5 @@
 import { ReactNode, useRef } from "react";
-import { CloseForm } from "./hooks/CloseForm";
+import { useCloseForm } from "./hooks/CloseForm";
 
 type CloseFormProps = {
   isOpen: boolean,
@@ -9,6 +9,6 @@ type CloseFormProps = {
 
 export const CloseFormOutside = ({ isOpen, setIsOpen, children }: CloseFormProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  CloseForm(isOpen, setIsOpen, wrapperRef);
+  useCloseForm(isOpen, setIsOpen, wrapperRef);
   return <div ref={wrapperRef}>{children}</div>;
 }
