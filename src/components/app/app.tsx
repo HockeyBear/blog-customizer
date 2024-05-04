@@ -7,22 +7,22 @@ import '../../styles/index.scss';
 import styles from '../../styles/index.module.scss';
 
 export const App = () => {
-    const [parameter, setParameter] = useState(defaultArticleState);
+	const [style, setStyle] = useState(defaultArticleState);
 
-    return (
-      <main
-        className={clsx(styles.main)}
-        style={{
-          '--font-family': parameter.fontFamilyOption.value,
-          '--font-size': parameter.fontSizeOption.value,
-          '--font-color': parameter.fontColor.value,
-          '--container-width': parameter.contentWidth.value,
-          '--bg-color': parameter.backgroundColor.value,
-        } as CSSProperties
-      }
-      >
-      <ArticleParamsForm param={parameter} articleStateChange={setParameter} />
-      <Article />
-      </main>
-    );
+	return (
+		<main
+			className={clsx(styles.main)}
+			style={
+				{
+					'--font-family': style.fontFamilyOption.value,
+					'--font-size': style.fontSizeOption.value,
+					'--font-color': style.fontColor.value,
+					'--container-width': style.contentWidth.value,
+					'--bg-color': style.backgroundColor.value,
+				} as CSSProperties
+			}>
+			<ArticleParamsForm param={style} articleStateChange={setStyle} />
+			<Article />
+		</main>
+	);
 };
